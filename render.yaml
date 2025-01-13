@@ -1,0 +1,16 @@
+services:
+  - name: node-backend
+    type: web
+    env: node
+    region: oregon  # Change to your preferred region
+    branch: main  # Change to your default branch
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free  # Change to "starter" or "standard" as needed
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5521  # Change if your app runs on a different port
+    autoDeploy: true  # Automatically deploy new commits
+
